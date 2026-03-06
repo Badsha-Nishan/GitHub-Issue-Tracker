@@ -19,6 +19,7 @@ function tabStyle(id) {
 
 // All Issues Cards
 const cardContainer = document.getElementById("cardsContainer");
+const totalIssues = document.getElementById("totalIssues");
 
 async function loadAllIssues() {
   const res = await fetch(
@@ -74,6 +75,7 @@ function displayCards(details) {
         `;
     cardContainer.appendChild(card);
   }
+  totalIssues.innerText = cardContainer.childElementCount;
 }
 
 loadAllIssues();
