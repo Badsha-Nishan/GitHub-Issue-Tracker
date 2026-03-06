@@ -62,14 +62,26 @@
     </header>
 
     <main class="mt-14 w-3/4 mx-auto">
+      <!-- Filtered BUttons Section -->
       <section class="shadow-sm">
         <div class="buttons p-6 bg-base-100 rounded-md">
-          <button class="btn px-8">All</button>
-          <button class="btn px-8">Open</button>
-          <button class="btn px-8">Closed</button>
+          <button onclick="tabStyle('allBtn')" id="allBtn" class="btn px-8 bg-primary text-white">
+            All
+          </button>
+          <button onclick="tabStyle('openBtn')" id="openBtn" class="btn px-8">
+            Open
+          </button>
+          <button
+            onclick="tabStyle('closedBtn')"
+            id="closedBtn"
+            class="btn px-8"
+          >
+            Closed
+          </button>
         </div>
       </section>
 
+      <!-- Total Issues Section -->
       <section class="shadow-sm">
         <div
           class="flex p-6 bg-base-100 rounded-md mt-4 items-center justify-between"
@@ -90,7 +102,8 @@
         </div>
       </section>
 
-      <section class="p-6 bg-base-100 mt-1 grid grid-cols-3">
+      <!-- Card Section -->
+      <section class="p-6 bg-base-100 mt-1 grid grid-cols-3 gap-4">
         <div
           class="card card-body space-y-5 shadow-lg border-t-4 border-green-500"
         >
@@ -122,5 +135,7 @@
         </div>
       </section>
     </main>
+
+    <script src="./script.js"></script>
   </body>
 </html>
