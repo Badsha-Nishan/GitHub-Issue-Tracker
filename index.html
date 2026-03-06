@@ -13,7 +13,7 @@
       type="image/x-icon"
     />
 
-    <!-- Font & FontAwesome -->
+    <!-- Google Font & FontAwesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -36,7 +36,40 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    <h1 class="text-3xl bg-red-400">Hello World</h1>
+  <body class="bg-base-200">
+    <main
+      class="max-w-md mx-auto min-h-screen flex justify-center items-center"
+    >
+      <div class="card bg-base-100 w-96 shadow-sm p-8">
+        <div class="space-y-5 text-center">
+          <div>
+            <img class="mx-auto" src="./assets/github-logo.png" alt="" />
+          </div>
+          <div>
+            <h2 class="text-2xl font-semibold">GitHub Issues Tracker</h2>
+            <p class="text-[#64748B]">Sign in to manage your issues</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <fieldset class="fieldset">
+            <label for="" class="text-xl">Username</label>
+            <input
+              type="text"
+              placeholder="Enter Username"
+              class="input input-md"
+            />
+            <br />
+            <label for="" class="text-xl">Password</label>
+            <input
+              type="text"
+              placeholder="Enter Password"
+              class="input input-md"
+            />
+            <br />
+            <button class="btn btn-primary">Sign In</button>
+          </fieldset>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
