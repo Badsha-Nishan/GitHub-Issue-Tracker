@@ -1,12 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="shortcut icon" href="./assets/github-feb-logo.png" type="image/x-icon">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/github-feb-logo.png"
+      type="image/x-icon"
+    />
+
+    <!-- Google Font & FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind & Daisy UI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-base-200">
+    <header>
+      <nav class="bg-base-100 shadow-sm">
+        <div class="navbar w-11/12 mx-auto">
+          <div class="flex-1">
+            <a class="btn btn-ghost text-xl"
+              ><img
+                class="max-w-10"
+                src="./assets/github-logo.png"
+                alt=""
+              />GitHub Issues Tracker</a
+            >
+          </div>
+          <div class="flex gap-2">
+            <input
+              type="text"
+              placeholder="🔍 Search Issues..."
+              class="input input-bordered w-24 md:w-auto"
+            />
+            <div>
+              <button class="btn btn-primary">➕ New Issues</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="mt-14 w-3/4 mx-auto">
+      <section class="shadow-sm">
+        <div class="buttons p-6 bg-base-100 rounded-md">
+          <button class="btn px-8">All</button>
+          <button class="btn px-8">Open</button>
+          <button class="btn px-8">Closed</button>
+        </div>
+      </section>
+
+      <section class="shadow-sm">
+        <div
+          class="flex p-6 bg-base-100 rounded-md mt-4 items-center justify-between"
+        >
+          <div class="flex gap-3 items-center">
+            <div class="border-blue-200 rounded-full border-8">
+              <img src="./assets/Aperture.png" alt="" />
+            </div>
+            <div>
+              <h2 class="text-2xl font-semibold">50 Issues</h2>
+              <p>Track and manage your project issues</p>
+            </div>
+          </div>
+          <div class="flex gap-7">
+            <p>🟢 Open</p>
+            <p>🟣 Closed</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-6 bg-base-100 mt-1 grid grid-cols-3">
+        <div
+          class="card card-body space-y-5 shadow-lg border-t-4 border-green-500"
+        >
+          <div class="flex justify-between">
+            <div>
+              <img src="./assets/Open-Status.png" alt="" />
+            </div>
+            <div class="badge badge-soft badge-secondary px-6">HIGH</div>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold mb-3">
+              Fix navigation menu on mobile devices
+            </h2>
+            <p>
+              The navigation menu doesn't collapse properly on mobile devices...
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <p class="badge badge-outline bg-[#FECACA] badge-secondary">Bug</p>
+            <p class="badge badge-outline bg-[#FDE68A] text-[#D97706]">
+              help wanted
+            </p>
+          </div>
+          <hr class="text-gray-300" />
+          <div>
+            <p>#1 by john_doe</p>
+            <p>1/15/2024</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
