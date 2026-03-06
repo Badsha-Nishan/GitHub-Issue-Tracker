@@ -65,7 +65,11 @@
       <!-- Filtered BUttons Section -->
       <section class="shadow-sm">
         <div class="buttons p-6 bg-base-100 rounded-md">
-          <button onclick="tabStyle('allBtn')" id="allBtn" class="btn px-8 bg-primary text-white">
+          <button
+            onclick="tabStyle('allBtn')"
+            id="allBtn"
+            class="btn px-8 bg-primary text-white"
+          >
             All
           </button>
           <button onclick="tabStyle('openBtn')" id="openBtn" class="btn px-8">
@@ -103,35 +107,48 @@
       </section>
 
       <!-- Card Section -->
-      <section class="p-6 bg-base-100 mt-1 grid grid-cols-3 gap-4">
-        <div
-          class="card card-body space-y-5 shadow-lg border-t-4 border-green-500"
-        >
-          <div class="flex justify-between">
-            <div>
-              <img src="./assets/Open-Status.png" alt="" />
+      <section
+        id="cardsContainer"
+        class="p-6 bg-base-100 mt-1 grid grid-cols-3 gap-4"
+      >
+        <div>
+          <!-- <div
+            class="card card-body min-h-[370px] space-y-5 shadow-lg border-t-4 border-green-500"
+          >
+            <div class="flex justify-between">
+              <div>
+                <img src="./assets/Open-Status.png" alt="" />
+              </div>
+              <div class="badge badge-soft badge-secondary px-6">HIGH</div>
             </div>
-            <div class="badge badge-soft badge-secondary px-6">HIGH</div>
-          </div>
-          <div>
-            <h2 class="text-xl font-bold mb-3">
-              Fix navigation menu on mobile devices
-            </h2>
-            <p>
-              The navigation menu doesn't collapse properly on mobile devices...
-            </p>
-          </div>
-          <div class="flex gap-4">
-            <p class="badge badge-outline bg-[#FECACA] badge-secondary">Bug</p>
-            <p class="badge badge-outline bg-[#FDE68A] text-[#D97706]">
-              help wanted
-            </p>
-          </div>
-          <hr class="text-gray-300" />
-          <div>
-            <p>#1 by john_doe</p>
-            <p>1/15/2024</p>
-          </div>
+            <div>
+              <h2 class="text-xl font-bold mb-3">
+                Fix navigation menu on mobile devices
+              </h2>
+              <p class="line-clamp-2">
+                The navigation menu doesn't collapse properly on mobile devices
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
+                enim voluptate assumenda est voluptas eum animi mollitia quis id
+                placeat, saepe expedita impedit incidunt quisquam ex nemo,
+                deserunt accusantium asperiores sunt accusamus iusto, molestias
+                tenetur repellat? Sequi perferendis reiciendis ducimus quod qui
+                rem ipsa amet eaque voluptates, maiores labore esse.
+              </p>
+            </div>
+            <div class="flex gap-4">
+              <p class="badge badge-outline bg-[#FECACA] badge-secondary">
+                Bug
+              </p>
+              <p class="badge badge-outline bg-[#FDE68A] text-[#D97706]">
+                help wanted
+              </p>
+            </div>
+            <hr class="text-gray-300" />
+            <div>
+              <p>#1 by john_doe</p>
+              <p>1/15/2024</p>
+            </div>
+          </div> -->
         </div>
       </section>
     </main>
