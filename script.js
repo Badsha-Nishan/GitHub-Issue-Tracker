@@ -33,11 +33,19 @@ function displayCards(details) {
     const card = document.createElement("div");
     card.innerHTML = `
             <div
-                class="card card-body min-h-[370px] space-y-5 shadow-lg border-t-4 border-green-500"
+                class="card card-body min-h-[370px] space-y-5 shadow-lg border-t-4 ${
+                  item.status === "open"
+                    ? "border-green-500"
+                    : "border-purple-500"
+                } "
               >
                 <div class="flex justify-between">
                   <div>
-                    <img src="./assets/Open-Status.png" alt="" />
+                    ${
+                      item.status === "open"
+                        ? "<img src='./assets/Open-Status.png' />"
+                        : "<img src='./assets/Closed-Status.png' />"
+                    }
                   </div>
                   <div class="badge badge-soft badge-secondary px-6">${item.priority.toUpperCase()}</div>
                 </div>
@@ -54,7 +62,7 @@ function displayCards(details) {
                     ${item.labels[0]}
                   </p>
                   <p class="badge badge-outline bg-[#FDE68A] text-[#D97706]">
-                  ${item.labels[1]}
+                   ${item.labels[1] ?? "N/A"}
                   </p>
                 </div>
                 <hr class="text-gray-300" />
