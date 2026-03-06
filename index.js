@@ -1,0 +1,33 @@
+const username = document.getElementById("username");
+const password = document.getElementById("password");
+const signInBtn = document.getElementById("signIn-btn");
+
+function handleLogin() {
+  if (
+    username.value.trim() === "admin" &&
+    password.value.trim() === "admin123"
+  ) {
+    openModal("Successfully", "Welcome!");
+    setTimeout(() => {
+      window.location.assign("./home.html");
+    }, 2000);
+  } else {
+    openModal("Warning!!", "Username or Password not match");
+  }
+}
+signInBtn.addEventListener("click", handleLogin);
+
+password.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    handleLogin();
+  }
+});
+// For Modal
+const modal = document.getElementById("my_modal_2");
+const title = document.getElementById("title");
+const message = document.getElementById("msg");
+function openModal(titleContent, messageContent) {
+  title.textContent = titleContent;
+  message.textContent = messageContent;
+  modal.showModal();
+}
