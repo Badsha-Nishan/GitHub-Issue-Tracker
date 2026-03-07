@@ -26,11 +26,13 @@ const totalIssues = document.getElementById("totalIssues");
 const modal = document.getElementById("my_modal_5");
 
 async function loadAllIssues() {
+  spinner();
   const res = await fetch(
     "https://phi-lab-server.vercel.app/api/v1/lab/issues"
   );
   const data = await res.json();
   issues = data.data;
+  hideSpinner();
   displayCards(issues);
 }
 
@@ -38,10 +40,9 @@ function displayCards(list) {
   cardContainer.innerHTML = "";
   for (const item of list) {
     const card = document.createElement("div");
-    card.className = "issue-card";
+    card.className = "issue-card cursor-pointer";
     card.innerHTML = `
             <div
-                id="card"
                 class="card card-body min-h-[370px] space-y-5 shadow-lg border-t-4 ${
                   item.status === "open"
                     ? "border-green-500"
@@ -90,6 +91,19 @@ function displayCards(list) {
   totalIssues.innerText = list.length;
 }
 
+// Spinner
+function spinner() {
+  const loading = document.getElementById("spinner");
+  loading.classList.remove("hidden");
+  loading.classList.add("grid");
+}
+
+function hideSpinner() {
+  const loading = document.getElementById("spinner");
+  loading.classList.remove("grid");
+  loading.classList.add("hidden");
+}
+
 // Modal
 function openModal(item) {
   document.getElementById("cardTitle").innerText = item.title;
@@ -110,6 +124,30 @@ function openModal(item) {
     item.priority.toUpperCase();
   modal.showModal();
 }
+
+// Input Search
+const search = document.getElementById("searchIssue");
+const searchBtn = document.getElementById("searchBtn");
+searchBtn.addEventListener("click", () => {
+  allBtn.classList.remove("bg-primary", "text-white");
+  openBtn.classList.remove("bg-primary", "text-white");
+  closedBtn.classList.remove("bg-primary", "text-white");
+  const input = search.value.trim().toLowerCase();
+  if (!input) {
+    displayCards(issues);
+    return;
+  }
+  const searchIssues = issues.filter((i) =>
+    i.title.toLowerCase().includes(input)
+  );
+  displayCards(searchIssues);
+});
+
+search.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    searchBtn.click();
+  }
+});
 
 // Filters
 allBtn.addEventListener("click", () => {
