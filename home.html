@@ -108,74 +108,36 @@
         </div>
       </section>
 
-      <!-- Card Section -->
+      <!-- All Card Section -->
       <section
         id="cardsContainer"
         class="p-6 bg-base-100 mt-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-      >
-        <!-- <div>
-          <div
-            class="card card-body min-h-[370px] space-y-5 shadow-lg border-t-4 border-green-500"
-          >
-            <div class="flex justify-between">
-              <div>
-                <img src="./assets/Open-Status.png" alt="" />
-              </div>
-              <div class="badge badge-soft badge-secondary px-6">HIGH</div>
-            </div>
-            <div>
-              <h2 class="text-xl font-bold mb-3">
-                Fix navigation menu on mobile devices
-              </h2>
-              <p class="line-clamp-2">
-                The navigation menu doesn't collapse properly on mobile devices
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero
-                enim voluptate assumenda est voluptas eum animi mollitia quis id
-                placeat, saepe expedita impedit incidunt quisquam ex nemo,
-                deserunt accusantium asperiores sunt accusamus iusto, molestias
-                tenetur repellat? Sequi perferendis reiciendis ducimus quod qui
-                rem ipsa amet eaque voluptates, maiores labore esse.
-              </p>
-            </div>
-            <div class="flex gap-4">
-              <p class="badge badge-outline bg-[#FECACA] badge-secondary">
-                Bug
-              </p>
-              <p class="badge badge-outline bg-[#FDE68A] text-[#D97706]">
-                help wanted
-              </p>
-            </div>
-            <hr class="text-gray-300" />
-            <div>
-              <p>#1 by john_doe</p>
-              <p>1/15/2024</p>
-            </div>
-          </div>
-        </div> -->
-      </section>
+      ></section>
 
       <!-- Modal Section -->
       <section>
         <!-- Open the modal using ID.showModal() method -->
-        <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+        <button class="btn hidden" onclick="my_modal_5.showModal()">
+          open modal
+        </button>
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
           <div class="modal-box">
             <div class="space-y-7">
               <h2 id="cardTitle" class="text-xl font-bold mb-3"></h2>
               <ul class="flex gap-7 list-disc">
-                <li class="badge text-white bg-[#00A96E] rounded-full">
-                  Opened
-                </li>
+                <li id="cardStatus" class="badge text-white rounded-full"></li>
                 <li id="cardAuthor1"></li>
                 <li id="date"></li>
               </ul>
               <div>
-                <p id="cardLabel1" class="badge badge-outline bg-[#FECACA] badge-secondary">
-                  
-                </p>
-                <p id="cardLabel2" class="badge badge-outline bg-[#FDE68A] text-[#D97706]">
-                  
-                </p>
+                <p
+                  id="cardLabel1"
+                  class="badge badge-outline bg-[#FECACA] badge-secondary"
+                ></p>
+                <p
+                  id="cardLabel2"
+                  class="badge badge-outline bg-[#FDE68A] text-[#D97706]"
+                ></p>
               </div>
               <p id="cardDescription" class="text-[#64748B]">
                 The navigation menu doesn't collapse properly on mobile devices.
@@ -188,7 +150,10 @@
                 </div>
                 <div>
                   <p class="text-[#64748B]">Priority:</p>
-                  <p id="cardPriority" class="badge bg-[#EF4444] rounded-full text-white"></p>
+                  <p
+                    id="cardPriority"
+                    class="badge bg-[#EF4444] rounded-full text-white"
+                  ></p>
                 </div>
               </div>
             </div>

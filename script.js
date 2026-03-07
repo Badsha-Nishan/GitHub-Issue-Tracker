@@ -1,5 +1,7 @@
 // 2. Home Page Logic
 
+let issues = [];
+
 // Filtered Buttons
 const allBtn = document.getElementById("allBtn");
 const openBtn = document.getElementById("openBtn");
@@ -28,12 +30,15 @@ async function loadAllIssues() {
     "https://phi-lab-server.vercel.app/api/v1/lab/issues"
   );
   const data = await res.json();
-  displayCards(data.data);
+  issues = data.data;
+  displayCards(issues);
 }
 
-function displayCards(details) {
-  for (const item of details) {
+function displayCards(list) {
+  cardContainer.innerHTML = "";
+  for (const item of list) {
     const card = document.createElement("div");
+    card.className = "issue-card";
     card.innerHTML = `
             <div
                 id="card"
@@ -76,23 +81,48 @@ function displayCards(details) {
                 </div>
               </div>
         `;
-    card.addEventListener("click", () => {
-      document.getElementById("cardTitle").innerText = item.title;
-      document.getElementById("cardDescription").innerText = item.description;
-      document.getElementById("cardAuthor").innerText = item.author;
-      document.getElementById("date").innerText = item.createdAt.split("T")[0];
-      document.getElementById(
-        "cardAuthor1"
-      ).innerText = `Opened by ${item.author}`;
-      document.getElementById("cardLabel1").innerText = item.labels[0];
-      document.getElementById("cardLabel2").innerText = item.labels[1] ?? "N/A";
-      document.getElementById("cardPriority").innerText =
-        item.priority.toUpperCase();
-      modal.showModal();
-    });
+
+    // For Modal
+    card.addEventListener("click", () => openModal(item));
+
     cardContainer.appendChild(card);
   }
-  totalIssues.innerText = cardContainer.childElementCount;
+  totalIssues.innerText = list.length;
 }
 
+// Modal
+function openModal(item) {
+  document.getElementById("cardTitle").innerText = item.title;
+  document.getElementById("cardDescription").innerText = item.description;
+  document.getElementById("cardStatus").innerText = item.status;
+  if (item.status === "open") {
+    document.getElementById("cardStatus").classList.remove("bg-purple-500");
+    document.getElementById("cardStatus").classList.add("bg-green-500");
+  } else {
+    document.getElementById("cardStatus").classList.add("bg-purple-500");
+  }
+  document.getElementById("cardAuthor").innerText = item.author;
+  document.getElementById("date").innerText = item.createdAt.split("T")[0];
+  document.getElementById("cardAuthor1").innerText = `Opened by ${item.author}`;
+  document.getElementById("cardLabel1").innerText = item.labels[0];
+  document.getElementById("cardLabel2").innerText = item.labels[1] ?? "N/A";
+  document.getElementById("cardPriority").innerText =
+    item.priority.toUpperCase();
+  modal.showModal();
+}
+
+// Filters
+allBtn.addEventListener("click", () => {
+  displayCards(issues);
+});
+
+openBtn.addEventListener("click", () => {
+  const openIssue = issues.filter((i) => i.status === "open");
+  displayCards(openIssue);
+});
+
+closedBtn.addEventListener("click", () => {
+  const closeIssue = issues.filter((i) => i.status === "closed");
+  displayCards(closeIssue);
+});
 loadAllIssues();
