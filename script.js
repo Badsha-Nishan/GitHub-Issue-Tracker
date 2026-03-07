@@ -20,6 +20,8 @@ function tabStyle(id) {
 // All Issues Cards
 const cardContainer = document.getElementById("cardsContainer");
 const totalIssues = document.getElementById("totalIssues");
+// Modal
+const modal = document.getElementById("my_modal_5");
 
 async function loadAllIssues() {
   const res = await fetch(
@@ -34,6 +36,7 @@ function displayCards(details) {
     const card = document.createElement("div");
     card.innerHTML = `
             <div
+                id="card"
                 class="card card-body min-h-[370px] space-y-5 shadow-lg border-t-4 ${
                   item.status === "open"
                     ? "border-green-500"
@@ -48,10 +51,10 @@ function displayCards(details) {
                         : "<img src='./assets/Closed-Status.png' />"
                     }
                   </div>
-                  <div class="badge badge-soft badge-secondary px-6">${item.priority.toUpperCase()}</div>
+                  <div  class="badge badge-soft badge-secondary px-6">${item.priority.toUpperCase()}</div>
                 </div>
                 <div>
-                  <h2 class="text-xl font-bold mb-3">
+                  <h2  class="text-xl font-bold mb-3">
                     ${item.title}
                   </h2>
                   <p class="line-clamp-2">
@@ -73,6 +76,20 @@ function displayCards(details) {
                 </div>
               </div>
         `;
+    card.addEventListener("click", () => {
+      document.getElementById("cardTitle").innerText = item.title;
+      document.getElementById("cardDescription").innerText = item.description;
+      document.getElementById("cardAuthor").innerText = item.author;
+      document.getElementById("date").innerText = item.createdAt.split("T")[0];
+      document.getElementById(
+        "cardAuthor1"
+      ).innerText = `Opened by ${item.author}`;
+      document.getElementById("cardLabel1").innerText = item.labels[0];
+      document.getElementById("cardLabel2").innerText = item.labels[1] ?? "N/A";
+      document.getElementById("cardPriority").innerText =
+        item.priority.toUpperCase();
+      modal.showModal();
+    });
     cardContainer.appendChild(card);
   }
   totalIssues.innerText = cardContainer.childElementCount;

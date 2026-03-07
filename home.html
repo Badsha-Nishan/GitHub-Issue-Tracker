@@ -61,7 +61,7 @@
       </nav>
     </header>
 
-    <main class="mt-14 w-3/4 mx-auto">
+    <main id="mainSection" class="mt-14 w-3/4 mx-auto">
       <!-- Filtered BUttons Section -->
       <section class="shadow-sm">
         <div class="buttons p-6 bg-base-100 rounded-md">
@@ -95,7 +95,9 @@
               <img src="./assets/Aperture.png" alt="" />
             </div>
             <div>
-              <h2 class="text-2xl font-semibold"><span id="totalIssues">0</span> Issues</h2>
+              <h2 class="text-2xl font-semibold">
+                <span id="totalIssues">0</span> Issues
+              </h2>
               <p>Track and manage your project issues</p>
             </div>
           </div>
@@ -150,6 +152,54 @@
             </div>
           </div>
         </div> -->
+      </section>
+
+      <!-- Modal Section -->
+      <section>
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <div class="space-y-7">
+              <h2 id="cardTitle" class="text-xl font-bold mb-3"></h2>
+              <ul class="flex gap-7 list-disc">
+                <li class="badge text-white bg-[#00A96E] rounded-full">
+                  Opened
+                </li>
+                <li id="cardAuthor1"></li>
+                <li id="date"></li>
+              </ul>
+              <div>
+                <p id="cardLabel1" class="badge badge-outline bg-[#FECACA] badge-secondary">
+                  
+                </p>
+                <p id="cardLabel2" class="badge badge-outline bg-[#FDE68A] text-[#D97706]">
+                  
+                </p>
+              </div>
+              <p id="cardDescription" class="text-[#64748B]">
+                The navigation menu doesn't collapse properly on mobile devices.
+                Need to fix the responsive behavior.
+              </p>
+              <div class="flex gap-32">
+                <div>
+                  <p class="text-[#64748B]">Assignee:</p>
+                  <p id="cardAuthor" class="font-semibold"></p>
+                </div>
+                <div>
+                  <p class="text-[#64748B]">Priority:</p>
+                  <p id="cardPriority" class="badge bg-[#EF4444] rounded-full text-white"></p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn bg-primary text-white">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
       </section>
     </main>
 
