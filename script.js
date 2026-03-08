@@ -51,7 +51,7 @@ function displayCards(list) {
     card.className = "issue-card cursor-pointer";
     card.innerHTML = `
             <div
-                class="card card-body min-h-[370px] space-y-5 shadow-lg border-t-4 ${
+                class="card card-body min-h-[390px] space-y-5 shadow-lg border-t-4 ${
                   item.status === "open"
                     ? "border-green-500"
                     : "border-purple-500"
@@ -81,11 +81,15 @@ function displayCards(list) {
                     ${item.description}
                   </p>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-1">
                   <p class="badge badge-outline bg-[#FECACA] badge-secondary">
                     ${item.labels[0]}
                   </p>
-                  <p class="badge badge-outline bg-[#FDE68A] text-[#D97706]">
+                  <p class="badge text-sm ${
+                    item.labels[1] == "good first issue"
+                      ? "text-[11px]"
+                      : "text-base"
+                  } badge-outline bg-[#FDE68A] text-[#D97706]">
                    ${item.labels[1] ?? "N/A"}
                   </p>
                 </div>
@@ -165,15 +169,18 @@ search.addEventListener("keydown", (e) => {
 
 // Handle Filters Buttons
 allBtn.addEventListener("click", () => {
+  search.value = "";
   displayCards(issues);
 });
 
 openBtn.addEventListener("click", () => {
+  search.value = "";
   const openIssue = issues.filter((i) => i.status === "open");
   displayCards(openIssue);
 });
 
 closedBtn.addEventListener("click", () => {
+  search.value = "";
   const closeIssue = issues.filter((i) => i.status === "closed");
   displayCards(closeIssue);
 });
