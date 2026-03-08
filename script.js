@@ -1,5 +1,6 @@
-// 2. Home Page Logic
+// 2. Home Page Logic Start
 
+// page protect
 const isLoggedIn = sessionStorage.getItem("isLogIn");
 if (!isLoggedIn) {
   window.location.replace("index.html");
@@ -30,6 +31,7 @@ const totalIssues = document.getElementById("totalIssues");
 // Modal
 const modal = document.getElementById("my_modal_5");
 
+// Load All Issues
 async function loadAllIssues() {
   spinner();
   const res = await fetch(
@@ -41,6 +43,7 @@ async function loadAllIssues() {
   displayCards(issues);
 }
 
+// Display the card
 function displayCards(list) {
   cardContainer.innerHTML = "";
   for (const item of list) {
@@ -115,7 +118,7 @@ function hideSpinner() {
   loading.classList.add("hidden");
 }
 
-// Modal
+// Handle Modal
 function openModal(item) {
   document.getElementById("cardTitle").innerText = item.title;
   document.getElementById("cardDescription").innerText = item.description;
@@ -160,7 +163,7 @@ search.addEventListener("keydown", (e) => {
   }
 });
 
-// Filters
+// Handle Filters Buttons
 allBtn.addEventListener("click", () => {
   displayCards(issues);
 });
