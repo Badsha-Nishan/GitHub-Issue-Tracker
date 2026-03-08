@@ -62,7 +62,13 @@ function displayCards(list) {
                         : "<img src='./assets/Closed-Status.png' />"
                     }
                   </div>
-                  <div  class="badge badge-soft badge-secondary px-6">${item.priority.toUpperCase()}</div>
+                  <div class="badge badge-soft px-6 ${
+                    item.priority.toUpperCase() == "MEDIUM"
+                      ? "bg-[#FFF6D1] text-[#F59E0B]"
+                      : item.priority.toUpperCase() == "LOW"
+                      ? "bg-[#EEEFF2] text-[#9CA3AF]"
+                      : "bg-[#FEECEC] text-[#EF4444]"
+                  }">${item.priority.toUpperCase()}</div>
                 </div>
                 <div>
                   <h2  class="text-xl font-bold mb-3">
