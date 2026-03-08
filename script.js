@@ -51,7 +51,7 @@ function displayCards(list) {
     card.className = "issue-card cursor-pointer";
     card.innerHTML = `
             <div
-                class="card card-body min-h-[390px] space-y-5 shadow-lg border-t-4 ${
+                class="card card-body min-h-[350px] space-y-5 shadow-lg border-t-4 ${
                   item.status === "open"
                     ? "border-green-500"
                     : "border-purple-500"
@@ -74,7 +74,7 @@ function displayCards(list) {
                   }">${item.priority.toUpperCase()}</div>
                 </div>
                 <div>
-                  <h2  class="text-xl font-bold mb-3">
+                  <h2  class=" font-bold mb-3">
                     ${item.title}
                   </h2>
                   <p class="line-clamp-2">
@@ -91,7 +91,7 @@ function displayCards(list) {
                           item.labels[1] == "good first issue"
                             ? "text-[11px]"
                             : "text-base"
-                        } badge-outline bg-[#FDE68A] text-[#D97706]">
+                        } badge-outline truncate bg-[#FDE68A] text-[#D97706]">
                    ${item.labels[1]}
                   </p>`
                       : ""
@@ -113,7 +113,7 @@ function displayCards(list) {
   totalIssues.innerText = list.length;
 }
 
-// Spinner
+// Loading Spinner
 function spinner() {
   const loading = document.getElementById("spinner");
   loading.classList.remove("hidden");

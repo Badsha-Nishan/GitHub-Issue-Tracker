@@ -59,17 +59,21 @@
               placeholder="Enter Username"
               class="input input-md"
             />
+            <p class="text-blue-500">Default: admin</p>
             <br />
             <label class="text-xl">Password</label>
-            <input
-              id="password"
-              type="password"
-              placeholder="Enter Password"
-              class="input input-md relative"
-            />
-            <button id="showPassword" class="absolute h-4 right-18 bottom-36">
-              <i id="eye" class="fa-solid fa-eye"></i>
-            </button>
+            <div class="relative">
+              <input
+                id="password"
+                type="password"
+                placeholder="Enter Password"
+                class="input input-md"
+              />
+              <p class="text-blue-500">Default: admin123</p>
+              <button id="showPassword" class="absolute right-4 bottom-7">
+                <i id="eye" class="fa-solid fa-eye"></i>
+              </button>
+            </div>
             <br />
             <button id="signIn-btn" class="btn btn-primary">Sign In</button>
           </fieldset>
