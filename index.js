@@ -1,4 +1,6 @@
 // 1. Login Page Logic
+
+
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const signInBtn = document.getElementById("signIn-btn");
@@ -8,7 +10,10 @@ function handleLogin() {
     username.value.trim() === "admin" &&
     password.value.trim() === "admin123"
   ) {
-    openModal("Successfully", "Welcome!");
+    // set sessionStorage
+    sessionStorage.setItem("isLogIn", "true");
+
+    openModal("Login Successfully", "Welcome!");
     setTimeout(() => {
       window.location.assign("./home.html");
     }, 2000);

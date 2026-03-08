@@ -1,5 +1,10 @@
 // 2. Home Page Logic
 
+const isLoggedIn = sessionStorage.getItem("isLogIn");
+if (!isLoggedIn) {
+  window.location.replace("index.html");
+}
+
 let issues = [];
 
 // Filtered Buttons
