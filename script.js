@@ -81,17 +81,21 @@ function displayCards(list) {
                     ${item.description}
                   </p>
                 </div>
-                <div class="flex gap-1">
+                <div class="flex w-fit gap-1">
                   <p class="badge badge-outline bg-[#FECACA] badge-secondary">
                     ${item.labels[0]}
                   </p>
-                  <p class="badge text-sm ${
-                    item.labels[1] == "good first issue"
-                      ? "text-[11px]"
-                      : "text-base"
-                  } badge-outline bg-[#FDE68A] text-[#D97706]">
-                   ${item.labels[1] ?? "N/A"}
-                  </p>
+                  ${
+                    item.labels[1]
+                      ? ` <p class="badge text-sm ${
+                          item.labels[1] == "good first issue"
+                            ? "text-[11px]"
+                            : "text-base"
+                        } badge-outline bg-[#FDE68A] text-[#D97706]">
+                   ${item.labels[1]}
+                  </p>`
+                      : ""
+                  }
                 </div>
                 <hr class="text-gray-300" />
                 <div>
@@ -165,6 +169,12 @@ search.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     searchBtn.click();
   }
+});
+
+// LogOut
+const logOut = document.getElementById("logoutBtn");
+logOut.addEventListener("click", () => {
+  window.location.replace("index.html");
 });
 
 // Handle Filters Buttons

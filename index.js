@@ -1,6 +1,5 @@
 // 1. Login Page Logic
 
-
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const signInBtn = document.getElementById("signIn-btn");
@@ -37,3 +36,19 @@ function openModal(titleContent, messageContent) {
   message.textContent = messageContent;
   modal.showModal();
 }
+
+// Toggle Show Password
+const passwordBtn = document.getElementById("showPassword");
+const eye = document.getElementById("eye");
+
+passwordBtn.addEventListener("click", () => {
+  if (password.type === "password") {
+    password.type = "text";
+    eye.classList.remove("fa-eye");
+    eye.classList.add("fa-eye-slash");
+  } else {
+    password.type = "password";
+    eye.classList.add("fa-eye");
+    eye.classList.remove("fa-eye-slash");
+  }
+});
