@@ -37,21 +37,23 @@
   <body class="bg-base-200">
     <header>
       <nav class="bg-base-100 shadow-sm">
-        <div class="navbar w-11/12 mx-auto">
+        <div
+          class="flex-col gap-2 lg:flex-row md:flex-row navbar w-11/12 mx-auto"
+        >
           <div class="flex-1">
-            <a href="./home.html" class="btn btn-ghost text-sm md:text-base lg:text-xl"
-              ><img
-                class="max-w-10"
-                src="./assets/github-logo.png"
-              />GitHub Issues Tracker</a
+            <a
+              href="./home.html"
+              class="btn btn-ghost text-sm md:text-base lg:text-xl"
+              ><img class="max-w-10" src="./assets/github-logo.png" />GitHub
+              Issues Tracker</a
             >
           </div>
-          <div class="flex gap-2">
+          <div class="flex gap-2 flex-col lg:flex-row md:flex-row">
             <input
               id="searchIssue"
               type="text"
               placeholder="🔍 Search Issues..."
-              class="input input-bordered w-24 md:w-auto"
+              class="input input-bordered md:w-auto w-full"
             />
             <div>
               <button id="searchBtn" class="btn btn-primary">Search</button>
@@ -71,7 +73,9 @@
     <main id="mainSection" class="mt-14 w-11/12 mx-auto">
       <!-- Filtered BUttons Section -->
       <section class="shadow-sm">
-        <div class="buttons p-6 bg-base-100 rounded-md">
+        <div
+          class="buttons p-6 bg-base-100 rounded-md flex flex-col sm:flex-row md:flex-row lg:flex-row gap-2"
+        >
           <button
             onclick="tabStyle('allBtn')"
             id="allBtn"
@@ -95,7 +99,7 @@
       <!-- Total Issues Section -->
       <section class="shadow-sm">
         <div
-          class="flex p-6 bg-base-100 rounded-md mt-4 items-center justify-between"
+          class="flex flex-col gap-2 sm:flex-row md:flex-row lg:flex-row p-6 bg-base-100 rounded-md mt-4 items-center justify-between"
         >
           <div class="flex gap-3 items-center">
             <div class="border-blue-200 rounded-full border-8">
