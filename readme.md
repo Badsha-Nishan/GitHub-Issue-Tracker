@@ -1,23 +1,85 @@
-1️⃣ What is the difference between var, let, and const?
+# 🐞 GitHub Issue Tracker
 
-ans:    var --> It is function scope, redeclare and reassign is possible.
-        let --> It is block scope, redeclare not possible and reassign is possible.
-        const --> It is block scope, redeclare not possible and reassign is not possible.
+A web application that allows users to track and manage issues similar to GitHub’s issue system.
+Users can create, update, and monitor issues with an organized and user-friendly interface.
 
-2️⃣ What is the spread operator (...)?
+---
 
-ans: create new array or object and it use for clone marge and passing values.
+## 🚀 Live Demo
 
-3️⃣ What is the difference between map(), filter(), and forEach()?
+👉 https://githubissues-tracker.netlify.app/
 
-ans:    map() --> return a new array and transform every element.
-        forEach() --> no return a new array and only execute a function on every element.
-        filter() --> return a new array and keep every elements base on condition.
+---
 
-4️⃣ What is an arrow function?
+## 🛠️ Technologies Used
 
-ans: shorter syntax for writing functions.
+* 🟨 JavaScript (ES6+)
+* 🎨 Tailwind CSS
+* 📦 Local Storage / JSON
 
-5️⃣ What are template literals?
+---
 
-ans: its magic of backticks, multi line strings and variable interpolation.
+## ✨ Key Features
+
+* 📝 Create new issues
+* 📌 Track issue status (Open / In Progress / Closed)
+* ✏️ Edit and update issues
+* 🗑️ Delete issues
+* 🔍 Filter and search issues
+* 📱 Responsive design
+
+---
+
+
+## ⚙️ How to Run Locally
+
+### 1️⃣ Clone the repository
+
+```bash id="3xplrg"
+git clone https://github.com/Badsha-Nishan/GitHub-Issue-Tracker.git
+```
+
+### 2️⃣ Navigate to project folder
+
+```bash id="6y0z4x"
+cd GitHub-Issue-Tracker
+```
+
+
+### 4️⃣ Run the development server
+
+```bash id="6zx92q"
+eidt with vs code
+```
+
+### 5️⃣ Open in browser
+
+```id="mnxg0z"
+http://localhost:5173
+```
+
+---
+
+## 🎯 Future Improvements
+
+* 🔐 User authentication
+* ☁️ integration (API)
+* 👥 Multi-user collaboration
+* 📊 Dashboard & analytics
+* 🔔 Notifications system
+
+---
+
+## 📸 Screenshots
+
+<img width="1814" height="822" alt="Screenshot 2026-03-09 013741" src="https://github.com/user-attachments/assets/731848cc-36ec-457c-92cf-0a24bf685bb0" />
+
+---
+
+## 📧 Contact
+
+👉 [badshanisan14@gmail.com](mailto:badshanisan14@gmail.com)
+
+---
+
+⭐️ If you like this project, give it a star!
